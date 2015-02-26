@@ -19,17 +19,17 @@ namespace Dota2Replay
         }
 
         public static class Globals {
-            public static string replaySource = @System.IO.File.ReadAllText(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\dota2 replay editor\\replayfolder.txt");
-            public static string descSource = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\dota2 replay editor\\description.txt";
+            public static string replaySource = @System.IO.File.ReadAllText(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\dota2 replay manager\\replayfolder.txt");
+            public static string descSource = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\dota2 replay manager\\description.txt";
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            if (!System.IO.Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\dota2 replay editor"))
+            if (!System.IO.Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\dota2 replay manager"))
             {
-                System.IO.Directory.CreateDirectory(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\dota2 replay editor");
+                System.IO.Directory.CreateDirectory(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\dota2 replay manager");
                 //File.Create(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\dota2 replay editor\\replayfolder.txt");
-                TextWriter tw = new StreamWriter(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\dota2 replay editor\\replayfolder.txt");
+                TextWriter tw = new StreamWriter(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\dota2 replay manager\\replayfolder.txt");
                 FolderBrowserDialog replayFolderDialog = new FolderBrowserDialog();
                 DialogResult result = replayFolderDialog.ShowDialog();
                 if (result == DialogResult.OK)
@@ -116,7 +116,7 @@ namespace Dota2Replay
                             {
                                 string[] values = line.Split('=');
                                 string value = values[1];
-                                listView1.Items[i].SubItems[4].Text = value;
+                                listView1.Items[i].SubItems[1].Text = value;
                                 break;
                             }
                         }
@@ -139,29 +139,20 @@ namespace Dota2Replay
                     var size = fi.Length;
                     double MB = (Convert.ToDouble(size) / 1024) / 1024;
                     double roundSize = Math.Round(MB, 2);
-                    string[] row1 = { roundSize.ToString() + " MB", fi.LastWriteTime.ToString(), fileName, "No Description" };
+                    //string[] row1 = { roundSize.ToString() + " MB", fi.LastWriteTime.ToString(), "No Description" };
+                    string[] row1 = { "No Description", roundSize.ToString() + " MB", fi.LastWriteTime.ToString()};
                     listView1.Items.Add(fileName).SubItems.AddRange(row1);
                     count++;
                 }
-                label2.Text = count + " replays found";
+                label2.Text = count + " replays found.";
             }
         }
 
         private void listView1_MouseMove(object sender, MouseEventArgs e)
         {
             var hit = listView1.HitTest(e.Location);
-            if (hit.SubItem != null && hit.SubItem == hit.Item.SubItems[3]) listView1.Cursor = Cursors.Hand;
+            if (hit.SubItem != null && hit.SubItem == hit.Item.SubItems[0]) listView1.Cursor = Cursors.Hand;
             else listView1.Cursor = Cursors.Default;
-        }
-    
-        private void listView1_MouseUp(object sender, MouseEventArgs e)
-        {
-            var hit = listView1.HitTest(e.Location);
-            if (hit.SubItem != null && hit.SubItem == hit.Item.SubItems[3])
-            {
-                var url = "http://www.dotabuff.com/matches/"+hit.SubItem.Text;
-                System.Diagnostics.Process.Start(url);
-            }
         }
 
         private void closeFile()
@@ -179,7 +170,7 @@ namespace Dota2Replay
             using (FileStream fs = new FileStream(Globals.descSource, FileMode.Append, FileAccess.Write))
             using (StreamWriter sw = new StreamWriter(fs))
             {
-                sw.WriteLine(text + " = " + input);
+                sw.WriteLine(text + " =" + input);
             }
             getDescriptionsFromFile();
         }
@@ -190,6 +181,16 @@ namespace Dota2Replay
             MessageBox.Show("Console command for watching replay #"+text+" has been copied to your clipboard.\nOpen DOTA 2 and paste it to console.");
             System.Windows.Forms.Clipboard.SetText("playdemo replays/"+text+".dem");
         }
-    }
 
+        private void listView1_DoubleClick(object sender, EventArgs e)
+        {
+            Point mousePosition = listView1.PointToClient(Control.MousePosition);
+            ListViewHitTestInfo hit = listView1.HitTest(mousePosition);
+            if(hit!= null && hit.SubItem == hit.Item.SubItems[0])
+            {
+                var url = "http://www.dotabuff.com/matches/" + hit.SubItem.Text;
+                System.Diagnostics.Process.Start(url);
+            }
+        }
+    }
 }

@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Dota2Replay.exe" size="27064">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Dota2Replay.exe" size="27576">
       <assemblyIdentity name="Dota2Replay" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>inoOuk9ehZZC5VIoKGrBCQ308SsPbzntEmcI4Q+Q+jQ=</dsig:DigestValue>
+        <dsig:DigestValue>jhvupGgKVa7B4KPATH6oAiXTDeOkkfUEHrhyZwoKoiM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
