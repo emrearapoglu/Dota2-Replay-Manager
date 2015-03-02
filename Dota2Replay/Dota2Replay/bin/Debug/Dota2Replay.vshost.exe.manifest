@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
   <asmv1:assemblyIdentity name="Dota2Replay.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
-  <description asmv2:iconFile="DOTA 2.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <description asmv2:iconFile="c0d15684e6c186289b50dfe083f5c562c57e8fb6.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
     <assemblyIdentity name="Dota2Replay" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
@@ -43,33 +43,24 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Dota2Replay.exe" size="27576">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Dota2Replay.exe" size="411064">
       <assemblyIdentity name="Dota2Replay" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>EaQGRQBcSqulljq364W+KaSoawekK87+yHSMsMedqOw=</dsig:DigestValue>
+        <dsig:DigestValue>PFZjEhAeY8bioAPO5ONg4mrqKUPLJ8vA6k7UhXWC/+A=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="description.txt" size="0">
+  <file name="c0d15684e6c186289b50dfe083f5c562c57e8fb6.ico" size="194905">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="DOTA 2.ico" size="4290">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>3LIeJ166YAoWK4vUGGB7J0uXlmI7Q8dHPOkmY00TVUo=</dsig:DigestValue>
+      <dsig:DigestValue>HSYqSETMpzWgz+JXC3o2LLextABvbauOP52vAnqSJ/I=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Dota2Replay.exe.config" size="1102">
@@ -79,15 +70,6 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>1voUGXN2I+ke9q4GDTAlXQIFHMwhA8lQx4/gxBrnV4s=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="favicon.ico" size="1150">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>j7ohPB10dwu1HqSqErl7z+ACdWU0N6dQq3UYTwLl4ro=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

@@ -11,15 +11,15 @@ C:\Users\Emre\Documents\Visual Studio 2013\Projects\Dota2Replay\Dota2Replay\obj\
 C:\Users\Emre\Documents\Visual Studio 2013\Projects\Dota2Replay\Dota2Replay\obj\Debug\Dota2Replay.exe
 C:\Users\Emre\Documents\Visual Studio 2013\Projects\Dota2Replay\Dota2Replay\obj\Debug\Dota2Replay.pdb
 D:\github\Dota2-Replay-Editor\Dota2Replay\Dota2Replay\bin\Debug\Dota2Replay.exe.config
-D:\github\Dota2-Replay-Editor\Dota2Replay\Dota2Replay\obj\Debug\Dota2Replay.exe
-D:\github\Dota2-Replay-Editor\Dota2Replay\Dota2Replay\obj\Debug\Dota2Replay.pdb
 D:\github\Dota2-Replay-Editor\Dota2Replay\Dota2Replay\bin\Debug\Dota2Replay.exe.manifest
 D:\github\Dota2-Replay-Editor\Dota2Replay\Dota2Replay\bin\Debug\Dota2Replay.application
 D:\github\Dota2-Replay-Editor\Dota2Replay\Dota2Replay\bin\Debug\Dota2Replay.exe
 D:\github\Dota2-Replay-Editor\Dota2Replay\Dota2Replay\bin\Debug\Dota2Replay.pdb
-D:\github\Dota2-Replay-Editor\Dota2Replay\Dota2Replay\obj\Debug\Dota2Replay.csprojResolveAssemblyReference.cache
 D:\github\Dota2-Replay-Editor\Dota2Replay\Dota2Replay\obj\Debug\Dota2Replay.Form1.resources
 D:\github\Dota2-Replay-Editor\Dota2Replay\Dota2Replay\obj\Debug\Dota2Replay.Properties.Resources.resources
 D:\github\Dota2-Replay-Editor\Dota2Replay\Dota2Replay\obj\Debug\Dota2Replay.csproj.GenerateResource.Cache
 D:\github\Dota2-Replay-Editor\Dota2Replay\Dota2Replay\obj\Debug\Dota2Replay.exe.manifest
 D:\github\Dota2-Replay-Editor\Dota2Replay\Dota2Replay\obj\Debug\Dota2Replay.application
+D:\github\Dota2-Replay-Editor\Dota2Replay\Dota2Replay\obj\Debug\Dota2Replay.exe
+D:\github\Dota2-Replay-Editor\Dota2Replay\Dota2Replay\obj\Debug\Dota2Replay.pdb
+D:\github\Dota2-Replay-Editor\Dota2Replay\Dota2Replay\obj\Debug\Dota2Replay.csprojResolveAssemblyReference.cache

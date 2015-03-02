@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace Dota2Replay
 {
@@ -16,6 +17,13 @@ namespace Dota2Replay
         public Form1()
         {
             InitializeComponent();
+            this.listView1.ColumnClick += listView1_ColumnClick;
+        }
+
+        private void SortByMatchId()
+        {
+            listView1.ListViewItemSorter = new NaturalComparer();
+            listView1.Sort();
         }
 
         public static class Globals {
@@ -28,7 +36,6 @@ namespace Dota2Replay
             if (!System.IO.Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\dota2 replay manager"))
             {
                 System.IO.Directory.CreateDirectory(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\dota2 replay manager");
-                //File.Create(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\dota2 replay editor\\replayfolder.txt");
                 TextWriter tw = new StreamWriter(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\dota2 replay manager\\replayfolder.txt");
                 FolderBrowserDialog replayFolderDialog = new FolderBrowserDialog();
                 DialogResult result = replayFolderDialog.ShowDialog();
@@ -98,7 +105,6 @@ namespace Dota2Replay
             string path = Globals.descSource;
             if (!File.Exists(path))
             {
-                //File.Create(path);
                 TextWriter tw = new StreamWriter(path);
                 tw.Close();
             }
@@ -139,12 +145,12 @@ namespace Dota2Replay
                     var size = fi.Length;
                     double MB = (Convert.ToDouble(size) / 1024) / 1024;
                     double roundSize = Math.Round(MB, 2);
-                    //string[] row1 = { roundSize.ToString() + " MB", fi.LastWriteTime.ToString(), "No Description" };
                     string[] row1 = { "No Description", roundSize.ToString() + " MB", fi.LastWriteTime.ToString()};
                     listView1.Items.Add(fileName).SubItems.AddRange(row1);
                     count++;
                 }
                 label2.Text = count + " replays found.";
+                SortByMatchId();
             }
         }
 
@@ -192,5 +198,16 @@ namespace Dota2Replay
                 System.Diagnostics.Process.Start(url);
             }
         }
-    }
+
+        private void listView1_ColumnClick(object sender, ColumnClickEventArgs e)
+        {
+            SortByMatchId();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var url = "https://github.com/fplayer/Dota2-Replay-Manager/";
+            System.Diagnostics.Process.Start(url);
+        }
+}//class
 }
